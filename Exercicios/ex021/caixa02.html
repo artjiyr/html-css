@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grouping tags</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: pink;
+        }
+        header{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+        nav{
+            background-color: rgba(146, 45, 62, 0.76);
+            padding: 3px;
+            box-shadow: 5px 3px 7px rgba(0, 0, 0, 0.404);
+        }
+
+        main{
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px 40px;
+            box-shadow: 4px 4px 9px 0px rgba(0, 0, 0, 0.274);
+        }
+
+        nav> a{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-right: 30px;
+
+        }
+
+        nav > a:hover{
+            text-decoration: none;
+            color: brown;
+        }
+
+        article {
+            background-color: rgba(255, 182, 193, 0.527);
+            padding: 5px;
+        }
+
+        
+
+        article > aside{
+            background-color: rgba(180, 66, 89, 0.63);
+            color: white;
+        }
+
+        footer{
+            background-color: rgb(131, 34, 55);
+            color: white;
+            text-align: center;
+            padding: 4px;
+            margin: 0px;
+        }
+
+        footer > p{
+            margin: 0px
+        }
+
+        h1{
+            color: rgb(88, 16, 38);
+            font-size: 45px;
+        }
+
+        .assunto1{
+        background-color: rgb(148, 39, 66);
+        color: white;
+        }
+
+        .assunto2{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 24px;
+            color: darkred;
+        }
+
+        .nome{
+            font-size: 30px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, serif;
+            color: rgb(99, 13, 27);
+        }
+
+        div#bola{
+            height: 100px;
+            width: 100px;
+            background-color: brown;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu site</h1>
+        <nav>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </header>
+    <main>
+        <section id="assuntos">
+            <p class="nome">Esportes Política Tecnologia</p>
+        </section>
+        <section id="noticias">
+            <article>
+                <h2 class="assunto1">Notícias sobre o Brasil</h2>
+                <p class="assunto2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae necessitatibus dolorem sunt nihil dignissimos magni neque! Distinctio quibusdam asperiores odit animi voluptate expedita earum nulla libero necessitatibus incidunt. Exercitationem, doloremque.</p>
+                <aside>
+                    <p>Artigo escrito por José da Silva</p>
+                </aside>
+            </article>
+            <article>
+
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Arthur </p>
+    </footer>
+    <div id="bola"></div>
+</body>
+</html>
