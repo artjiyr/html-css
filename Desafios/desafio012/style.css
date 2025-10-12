@@ -65,17 +65,31 @@ section{
 section.normal{
     background-color: white;
     color: black;
+    font-size: 2em;
 }
 
 section.imagem{
     background-color: rgba(90, 89, 89, 0.815);
     color: white;
+    text-shadow: 1px 1px 3px black;
+    font-size: 2em;
 }
 
 .imagem > p{
     width: 500px;
     background-color: rgba(0, 0, 0, 0.253);
     padding: 20px;
+    border-radius: 30px;
+}
+
+.imagem#img1{
+    background-image: url(imagens/background001.jpg);
+    background-attachment: fixed;
+}
+
+.imagem#img2{
+    background-image: url(imagens/background002.jpg);
+    background-attachment: fixed;
 }
 
 section > p{
