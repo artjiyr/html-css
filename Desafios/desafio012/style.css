@@ -71,39 +71,41 @@ section.normal{
 section.imagem{
     background-color: rgba(90, 89, 89, 0.897);
     color: white;
-    text-shadow: 1px 1px 3px black;
+    text-shadow: 2px 2px 1px black;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.473);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .imagem > p{
     display: inline-block;
-    background-color: rgba(0, 0, 0, 0.253);
+    background-color: rgba(0, 0, 0, 0.514);
     padding: 5px;
     border-radius: 30px;
 }
 
 .imagem#img1{
-    background-image: url(imagens/background001.jpg);
+    background-image: url('imagens/background001.jpg');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 .imagem#img2{
-    background-image: url(imagens/background002.jpg);
+    background-image: url('imagens/background002.jpg');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 section > p{
     font-family: var(--font2);
+    padding-bottom: 2em;
 }
 
 footer{
     background-color: black;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 12px;
 }
