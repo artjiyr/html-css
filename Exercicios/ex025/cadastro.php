@@ -1,1 +1,0 @@
-Os seus dados foram enviados!
