@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sites sobre animes</h1>
+        <span id="menu" class="material-icons" onclick="clickMenu()">menu</span>
+        <nav id="itens">
+            <ul>
+                <li><a href="#">Opção 1</a></li>
+                <li><a href="#">Opção 2</a></li>
+                <li><a href="#">Opção 3</a></li>
+                <li><a href="#">Opção 4</a></li>
+                <li><a href="#">Opção 5</a></li>
+                <li><a href="#">Opção 6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2> Nova temporada de Ranma 1/2 disponível!</h2>
+            <img src="akane003.jpg" alt="Anime Ranma 1/2">
+            <p>As notícias mais recentes sobre Ranma 1/2 se concentram na segunda temporada do remake produzido pelo estúdio Mappa, que estreou na Netflix em 4 de outubro de 2025. 
+            Remake do anime (Netflix)
+</p>
+<p>
+    A primeira temporada do remake estreou em outubro de 2024.
+    Em dezembro de 2024, foi anunciada a produção da segunda temporada, após o sucesso da primeira.
+</p><br>
+<p>
+    A segunda temporada foi lançada na Netflix em 4 de outubro de 2025.
+    Foram divulgados novos trailers, incluindo a versão dublada e um com a música de abertura e encerramento.
+    Mangá
+</p><br>
+<p>
+    Em agosto de 2025, foi anunciado que a Editora JBC relançaria o mangá de Ranma 1/2 no formato wideban no Brasil, após uma enquete com os fãs.
+    A reimpressão conta com arquivos remasterizados e uma qualidade de imagem superior à da publicação anterior.
+    Mais informações
+</p><br>
+<p>
+    A produção do novo anime é do estúdio Mappa, responsável por outras animações de sucesso.</p><br>
+<p>
+    Além do relançamento do mangá, o sucesso do remake na Netflix despertou o interesse de fãs antigos e novos na obra de Rumiko Takahashi. 
+</p>
+        </article>
+    </main>
+
+    <script>
+        function clickMenu() {
+            if (itens.style.display == 'block') {
+                itens.style.display = 'none'
+            } else {
+                itens.style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
