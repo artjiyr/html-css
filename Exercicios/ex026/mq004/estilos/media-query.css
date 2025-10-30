@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* Versão Mobile First */
+
+/* Typical Device Breackpoints 
+Pequenas telas: até 599px
+Celular: até 600px
+Tablet: 768px até 992px
+Desktop: 992px até 1199px
+Grandes telas: a partir de 1200px
+*/
+
+@media print { /*IMPRESSÃO, desnecessário*/
+    
+    *{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1em;
+    }
+    
+    body{
+        background-image: url(../imagens-projeto/back-calculadora.jpg);
+    }
+
+    main {
+        border: 10px solid pink;
+    }
+
+    main::after {
+        content: 'Essa impressão foi feita através do site de artjiyr.com';
+        text-decoration: overline;
+    }
+
+    main h1 {
+        text-shadow: none;
+        color: black;
+    }
+
+    img#phone {display: none; }
+    img#tablet { display: none; }
+    img#pc { display: none; }
+    img#print { display: block; }
+    img#tv { display: none; }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { /*TABLET*/
+    body {
+        background-image: url(../imagens-projeto/back-tablet.jpg);
+    }
+
+    img#phone {display: none; }
+img#tablet { display: block; }
+img#pc { display: none; }
+img#print { display: none; }
+img#tv { display: none; }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) { /*DESKTOP*/
+    body {
+        background-image: url(../imagens-projeto/pc.jpg);
+    }
+    img#phone {display: none; }
+img#tablet { display: none; }
+img#pc { display: block; }
+img#print { display: none; }
+img#tv { display: none; }
+}
+
+@media screen and (min-width: 1200px) { /* GRANDES TELAS */
+    body{
+        background-image: url(../imagens-projeto/back-tv.jpg);
+    }
+
+    main {
+        width: 700px;
+    }
+
+    img#phone {display: none; }
+img#tablet { display: none; }
+img#pc { display: none; }
+img#print { display: none; }
+img#tv { display: block; }
+}
