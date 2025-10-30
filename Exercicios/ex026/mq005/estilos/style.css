@@ -52,11 +52,13 @@ nav > ul > li > a {
     color: white;
     text-align: center;
     border-top: 2px solid #F2D750;
+    border-radius: 10px;
 }
 
 nav > ul > li > a:hover {
     background-color: #8265BF;
     transition: 0.8s;
+    padding: 12px;
 }
 
 main {

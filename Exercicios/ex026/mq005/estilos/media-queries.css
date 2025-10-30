@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* Versão Mobile First */
+
+/* Typical Device Breackpoints 
+Pequenas telas: até 599px
+Celular: até 600px
+Tablet: 768px até 992px
+Desktop: 992px até 1199px
+Grandes telas: a partir de 1200px
+*/
+
+
+@media screen and (min-width: 768px) {
+    span#menu {
+        display: none;
+    }
+}
+
+nav {
+    display: block;
+}
+
+nav > ul > li {
+    display: inline-block;
+}
+
+main{
+    width: 768px;
+}
+
