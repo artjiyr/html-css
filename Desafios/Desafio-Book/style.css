@@ -39,13 +39,3 @@ body {
     gap: 10px;
     border: 1px solid white;
 }
-
-.turn-page-wrapper {
-    background-color: beige;
-}
-
-p {
-    display: block;
-    margin: auto;
-    font-size: 2em;
-}
