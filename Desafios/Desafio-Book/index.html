@@ -7,35 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="flipbook">
-        <div class="hard"> 
-            <h1>Bem vindo ao diário do Sora</h1>
-            
-        </div>
-        <div class="hard"></div>
-        <div>
-            <p>Espero que realmente ninguém encontre esse livro</p>
-        </div class= "page">
-        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum tempora quisquam eos sunt porro eveniet sit laboriosam suscipit omnis commodi asperiores, maiores saepe rerum doloribus corporis, soluta deleniti. Beatae, earum.
-        </div>
-        <div class= "page">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure inventore nemo animi nisi sit eius accusamus. Eius mollitia hic quam asperiores itaque, suscipit nam reiciendis. Officia dolores sint id eius?
-        </div class= "page">
-        <div class= "page">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolorem deleniti iure consectetur recusandae dolore vitae, soluta, eaque aliquid rem perferendis odit, voluptas dicta provident optio temporibus nisi nesciunt? Sapiente.
-        </div>
-        <div class="hard"></div>
-        <div class="hard">
-            <h1>Apague tudo isso, antes que seja tarde... </h1>
-            <p>Sora Aikyo</p>
-        </div>
-    </div>
-
-    <script src="jquery.js"></script>
-    <script src="turn.js"></script>
-    <script>
-        $(".flipbook").turn();
-
-    </script>
+<div id="flipbook">
+	<div class="hard"> Turn.js </div>
+	<div class="hard"></div>
+	<div> Page 1 </div>
+	<div> Page 2 </div>
+	<div> Page 3 </div>
+	<div> Page 4 </div>
+	<div class="hard"></div>
+	<div class="hard"></div>
+</div>
+<script type="text/javascript">
+	$("#flipbook").turn({
+		width: 400,
+		height: 300,
+		autoCenter: true
+	});
+</script>
 </body>
 </html>
