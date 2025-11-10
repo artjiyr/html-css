@@ -6,7 +6,7 @@ body{
     font-family: "Tangerine", cursive;
     font-size: 2.5em;
     text-align: justify;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(62, 62, 62);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -20,6 +20,8 @@ div > h2 {
 h1 {
     text-align: center;
     padding-top: 30%;
+    color: aliceblue;
+    text-shadow: 1px 1px 5px black;
 }
 
 .book {
@@ -36,11 +38,14 @@ input {
 }
 
 .cover, .back-cover {
-    background-color: rgb(73, 124, 174);
+    background-image: url(cover-book2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 100%;
     border-radius: 0 15px 15px 0;
-    box-shadow: 0 0 5px rgba(0, 0, 10, 0.616);
+    box-shadow:  0px 12px 12px rgb(0 0 10 / 27%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,9 +54,9 @@ input {
 .cover {
     position: absolute;
     z-index: 5;
-    transform-origin: center left;
+    transform-origin: left;
+    transform-style: preserve-3d;
     transition: transform 1s;
-    perspective: 1500;
 }
 
 .cover label {
@@ -64,6 +69,121 @@ input {
     position: relative;
     z-index: 0;
 }
+
+.cover-front, .cover-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 0 15px 15px 0;
+}
+
+.cover-front {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-front::after {
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    width: 300%;
+    height: 300%;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+         rgba(255, 255, 255, 0.683) 0%,
+        rgba(146, 214, 241, 0.589) 30%,
+        rgba(103, 158, 209, 0.961) 60%,
+        transparent 100%
+    );
+    transform: rotate(25deg);
+    opacity: 0;
+     pointer-events: none;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.cover-front::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.836),
+        transparent 40%,
+        transparent 60%,
+        rgba(255, 255, 255, 0.797)
+    );
+    opacity: 0;
+     pointer-events: none;
+    transition: opacity 0.6s ease-in-out;
+    mix-blend-mode: screen;
+}
+
+.cover-front:hover::after {
+    animation: shineHover 1.6s ease-in-out;
+    opacity: 1;
+}
+
+.cover-front:hover::before {
+    opacity: 1;
+}
+
+@keyframes shineHover {
+    0% {
+        transform: translate(-40%, -40%) rotate(25deg);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        transform: translate(40%, 40%) rotate(25deg);
+        opacity: 0.8;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(90%, 90%) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.cover-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.cover-back label{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.cover-front {
+    z-index: 3;
+}
+
+.cover-back {
+    z-index: 4;
+}
+
+
 
 .page {
     z-index: 1;
