@@ -4,8 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diário do Sora</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1cad54f882.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
-    
+    <input type="checkbox" id="checkbox-cover">
+    <input type="checkbox" id="checkbox-page1">
+    <input type="checkbox" id="checkbox-page2">
+    <input type="checkbox" id="checkbox-page3">
+    <input type="checkbox" id="checkbox-page4">
+    <div class="book">
+        <div class="cover">
+            <label for="checkbox-cover"><h1>Diário de Sora Aikyo</h1></label>
+        </div>
+        <div class="page" id="page1">
+            <div class="front-page">
+                <h2>Page 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero exercitationem nam doloremque fuga, error dolor distinctio quidem! Minus ut, eum repudiandae sit ad nam voluptas cum suscipit! Itaque, ipsa.</p>
+                <label class="next" for="checkbox-page1"><span class="material-symbols-outlined">keyboard_arrow_right</span></label>
+            </div>
+            <div class="back-page">
+                <label class="prev" for="checkbox-page1"><span class="material-symbols-outlined">keyboard_arrow_left</span>
+                </label>
+            </div>
+        </div>
+        <div class="page" id="page2">
+            <div class="front-page">
+                <h2>Page 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero exercitationem nam doloremque fuga, error dolor distinctio quidem! Minus ut, eum repudiandae sit ad nam voluptas cum suscipit! Itaque, ipsa. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere culpa eos quae omnis quasi exercitationem soluta architecto rerum, id voluptas accusantium praesentium odio, consectetur doloremque pariatur perferendis ratione atque impedit.</p>
+                 <label class="next" for="checkbox-page2"><span class="material-symbols-outlined">keyboard_arrow_right</span></label>
+            </div>
+            <div class="back-page">
+                <label class="prev" for="checkbox-page2"><span class="material-symbols-outlined">keyboard_arrow_left</span>
+                </label>
+            </div>
+        </div>
+        <div class="page" id="page3">
+            <div class="front-page">
+                <h2>Page 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae vero exercitationem nam doloremque fuga, error dolor distinctio quidem! Minus ut, eum repudiandae sit ad nam voluptas cum suscipit! Itaque, ipsa. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur quia nesciunt corrupti possimus libero iusto deserunt esse laudantium magnam, nostrum aperiam eos, aspernatur expedita explicabo consequuntur porro animi, provident architecto. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab exercitationem consectetur earum porro necessitatibus, beatae repellendus ut aut officia asperiores! Dicta corporis praesentium sapiente labore perferendis, deleniti quam modi aliquid. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nesciunt itaque consequuntur ratione atque sed nemo odit sapiente exercitationem neque, ipsam excepturi culpa iure eveniet assumenda voluptatum enim cumque dolore.</p>
+                <label class="next" for="checkbox-page3"><span class="material-symbols-outlined">keyboard_arrow_right</span></label>
+            </div>
+        </div>
+        <div class="back-page"></div>
+         <div class="page" id="page4">
+            <div class="front-page">
+                <h2>Page 4</h2>
+                <p>Destrua o mais rápido que puder... antes que seja tarde demais...</p>
+            </div>
+        </div>
+        <div class="back-cover"></div>
+    </div>
 </body>
 </html>

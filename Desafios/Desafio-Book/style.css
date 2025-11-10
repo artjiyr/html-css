@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(31, 31, 31);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book {
+    width: 700px;
+    height: 900px;
+    position: relative;
+    perspective: 1500px;
+}
+
+
+
+input {
+    display: none;
+}
+
+.cover, .back-cover {
+    background-color: rgb(73, 124, 174);
+    width: 100%;
+    height: 100%;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 10, 0.616);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover {
+    position: absolute;
+    z-index: 5;
+    transform-origin: center left;
+    transition: transform 1s;
+    perspective: 1500;
+}
+
+.cover label {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.back-cover {
+    position: relative;
+    z-index: 0;
+}
+
+.page {
+    z-index: 1;
+    position: absolute;
+    background-color: beige;
+    width: 680px;
+    height: 880px;
+    border-radius: 0 15px 15px 0;
+    margin-top: 10px;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition-duration: 1.5s;
+}
+
+
+.front-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.back-page {
+    transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    z-index: 99;
+}
+
+
+.next{
+    position: absolute;
+    bottom: 1em;
+    cursor: pointer;
+}
+
+.prev{
+    position: absolute;
+    bottom: 1em;
+    cursor: pointer;
+}
+
+.next{
+    right: 1em;
+}
+
+.prev{
+    left: 1em;
+}
+
+#page1 {
+    z-index: 4;
+}
+
+#page2 {
+    z-index: 3;
+}
+
+#page3 {
+    z-index: 2;
+}
+
+#page4 {
+    z-index: 1;
+}
+
+#checkbox-cover:checked ~ .book{
+    transform: translateX(200px);
+    transition-duration: .8s;
+}
+
+#checkbox-cover:checked ~ .book .cover {
+    transition: transform 1.5s;
+    transform: rotateY(-180deg);
+    z-index: 1;
+}
+
+#checkbox-cover:checked ~ .book .page {
+    box-shadow: 0 0 3px rgb(99,98,98);
+}
+
+#checkbox-page1:checked ~ .book #page1 {
+    transform: rotateY(-180deg);
+    z-index: 2;
+}
+
+#checkbox-page2:checked ~ .book #page2 {
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+
+#checkbox-page3:checked ~ .book #page3 {
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+
+#checkbox-page4:checked ~ .book #page4 {
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
