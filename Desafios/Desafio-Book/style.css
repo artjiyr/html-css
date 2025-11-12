@@ -2,9 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+:root {
+    --fontpadrão: Arial, Helvetica, sans-serif;
+    --fontcapa: "Cinzel Decorative", serif;
+    --fontpag: "Imperial Script", cursive;
+}
+
 body{
-    font-family: "Imperial Script", cursive;
+   font-family: "Imperial Script", cursive;
     font-size: 1em;
+    text-align: justify;
+    background-color: rgb(31, 31, 31);
     background-color: rgb(62, 62, 62);
     height: 100vh;
     display: flex;
@@ -13,34 +23,40 @@ body{
 }
 
 div > h2 {
+    font-family: var(--fontpag);
+    margin-top: 0px;
     text-align: left;
-    font-size: 2em;
+    font-size: 1.8em;
+    padding: 10px;
 }
 
-
-
-#back h2 {
-    margin-bottom: 10px;
+h1 {
+    font-family: var(--fontcapa);
+    font-style: normal;
+    text-align: center;
+    font-size: 2.5em;
+    padding-top: 30%;
+    color: aliceblue;
+    text-shadow: 1px 1px 5px black;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
-p {
-    font-size: 2.3em;
-}
-
-#back {
-    font-size: 0.8em;
+div > p {
+    font-family: var(--fontpag);
+    font-size: 1.5em;
     margin: 0px;
-    padding: 2px;
+    padding: 10px;
 }
 
 mark{
     background-color: black;
-    user-select: none;      /* impede selecionar o texto */
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
       user-select: none;
-    pointer-events: none;  /* impede interação total */
+    pointer-events: none;
 }
 
 mark::selection {
@@ -48,64 +64,21 @@ mark::selection {
     color: transparent;
 }
 
-h1 {
-    text-align: center;
-    font-size: 4em;
-    padding-top: 30%;
-    color: aliceblue;
-    text-shadow: 1px 1px 5px black;
-}
-
 .book {
-    width: 55vw;
-    height: 75vh;
-    max-width: 700px;
-    max-height: 900px;
+    width: 479px;
+    height: 600px;
     position: relative;
     perspective: 1500px;
-    transition: transform 800ms cubic-bezier(.2,.9,.3,1), box-shadow 800ms ease;
-    transform-origin: center center;
-    filter: drop-shadow(0px 25px 35px rgba(0,0,0,0.45));
-}
-
-.book.fullscreen {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(calc(45% - 150px), -50%) scale(1.45);
-    width: 700px;
-    height: 900px;
-    z-index: 9999;
-    transition: transform 0.8s ease;
 }
 
 
-.book.fullscreen-fill {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: none !important;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
-    transition: width 0.6s ease, height 0.6s ease;
-    transform: scale(2.35) translateY(-30px);
-}
-
-.book.fullscreen::before {
-    content:"";
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.35);
-    z-index: -1;
-    pointer-events: none;
-}
 
 input {
     display: none;
 }
 
 .cover, .back-cover {
+    background-color: rgb(73, 124, 174);
     background-image: url(cover-book2.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -113,6 +86,7 @@ input {
     width: 100%;
     height: 100%;
     border-radius: 0 15px 15px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 10, 0.616);
     box-shadow:  0px 12px 12px rgb(0 0 10 / 27%);
     display: flex;
     align-items: center;
@@ -122,9 +96,11 @@ input {
 .cover {
     position: absolute;
     z-index: 5;
+    transform-origin: center left;
     transform-origin: left;
     transform-style: preserve-3d;
     transition: transform 1s;
+    perspective: 1500;
 }
 
 .cover label {
@@ -257,17 +233,14 @@ input {
     z-index: 1;
     position: absolute;
     background-color: beige;
-    width: 53vw;
-    height: 73vh;
-    max-width: 680px;
-    max-height: 880px;
+    width: 459px;
+    height: 580px;
     border-radius: 0 15px 15px 0;
     margin-top: 10px;
     transform-origin: left;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
     transition-duration: 1.5s;
-    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -286,37 +259,9 @@ input {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    box-sizing: border-box;
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-shadow: inset 0px 0px 25px rgba(0, 0, 0, 0.30);
+    z-index: 99;
 }
 
-.cover, .page {
-    transition: box-shadow 0.4s ease;
-}
-
-.cover:hover, .page:hover {
-    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.35);
-    transform-style: preserve-3d;
-}
-
-.cover::after, .page::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.25), transparent 60%);
-    opacity: 0;
-    transition: opacity .6s ease;
-    pointer-events: none;
-}
-
-.cover:hover::after,
-.page:hover::after {
-    opacity: 1;
-}
 
 .next{
     position: absolute;
@@ -354,7 +299,7 @@ input {
     z-index: 1;
 }
 
-#checkbox-cover:checked ~ .book:not(.fullscreen) {
+#checkbox-cover:checked ~ .book{
     transform: translateX(200px);
     transition-duration: .8s;
 }
