@@ -11,6 +11,7 @@
 }
 
 body{
+    margin: 0px;
    font-family: "Imperial Script", cursive;
     font-size: 1em;
     text-align: justify;
@@ -20,6 +21,23 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#sparkle-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+@keyframes fadeOut {
+  to {
+    transform: translateY(-10px) scale(0);
+    opacity: 0;
+  }
 }
 
 div > h2 {
@@ -69,6 +87,7 @@ mark::selection {
     height: 600px;
     position: relative;
     perspective: 1500px;
+    transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2,1);
 }
 
 
@@ -235,12 +254,27 @@ input {
     background-color: beige;
     width: 459px;
     height: 580px;
-    border-radius: 0 15px 15px 0;
+    border-radius: 0 10px 10px 0;
     margin-top: 10px;
     transform-origin: left;
     transform-style: preserve-3d;
     transform: rotateY(0deg);
-    transition-duration: 1.5s;
+    transition: transform 1.2s cubic-bezier(0.45, 0.03, 0.25, 1);
+}
+
+.page::before { /*Sombras*/
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0.15), transparent 70%);
+    border-radius: 0 10px 10px 0;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.page:hover::before { /*Sombras*/
+    opacity: 1;
 }
 
 
@@ -300,8 +334,9 @@ input {
 }
 
 #checkbox-cover:checked ~ .book{
-    transform: translateX(200px);
+    transform: translateX(355px) scale(1.4);
     transition-duration: .8s;
+    transition: transform 1.2s cubic-bezier(0.4,0.0,0.2,1);
 }
 
 #checkbox-cover:checked ~ .book .cover {

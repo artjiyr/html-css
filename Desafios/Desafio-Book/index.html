@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
+     <div class="light-reflection"></div>
     <audio id="shine-sound" src="shine.mp3" preload="auto"></audio>
     <audio id="pageSound" src="som-de-página.mp3"></audio>
     <input type="checkbox" id="checkbox-cover">
@@ -112,7 +113,58 @@
         <div class="back-cover"></div>
     </div>
 
+    <canvas id="sparkle-cursor"></canvas>
     <script>
+     const canvas = document.getElementById("sparkle-cursor");
+const ctx = canvas.getContext("2d");
+
+let w, h, particles = [];
+const maxParticles = 40; // quantidade de estrelinhas
+const colors = ["#a4e6ff", "#9fe3ff", "#d3f8ff", "#c4e7ff"];
+
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+document.addEventListener("mousemove", (e) => {
+  for (let i = 0; i < 2; i++) {
+    particles.push({
+      x: e.clientX,
+      y: e.clientY,
+      size: Math.random() * 3 + 1,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      life: 1,
+      velocityX: (Math.random() - 0.5) * 1.5,
+      velocityY: (Math.random() - 0.5) * 1.5
+    });
+  }
+});
+
+function animate() {
+  ctx.clearRect(0, 0, w, h);
+  particles.forEach((p, i) => {
+    p.x += p.velocityX;
+    p.y += p.velocityY;
+    p.life -= 0.02;
+    p.size *= 0.98;
+    if (p.life <= 0 || p.size <= 0.5) {
+      particles.splice(i, 1);
+    } else {
+      ctx.globalAlpha = p.life;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+
+
      document.addEventListener("DOMContentLoaded", () => {
     const coverCheckbox = document.getElementById("checkbox-cover");
     const book = document.querySelector(".book");
