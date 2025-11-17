@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abertura Mágica</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="splash" id="splash">
+    <div class="portal"></div>
+    <h1 class="logo">Yamito Hikari</h1>
+</div>
+
+<div id="site">
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <main>
+        <p>Bem-vindo ao Reino de Yamito Hikari.</p>
+    </main>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById("splash").classList.add("fade-out");
+        document.getElementById("site").classList.add("show");
+    }, 3500); // duração da abertura
+</script>
+</body>
+</html>

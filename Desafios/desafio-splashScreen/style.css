@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/* Tela de abertura */
+.splash {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, #ffb6e6 0%, #b3006c 60%, #780047 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 1.5s ease;
+}
+
+/* Brilho suave no centro */
+.glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 200, 255, 0.6), transparent 70%);
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Logo / título */
+.logo {
+    font-size: 15rem;
+    font-family: 'Cinzel', serif;
+    color: #fff8fd;
+    letter-spacing: 3px;
+    text-shadow: 
+        0 0 15px #ff94d8,
+        0 0 25px #ff5ec4,
+        0 0 40px #d60088;
+    opacity: 0;
+    animation: fadeLogo 2.5s forwards 1s;
+}
+
+/* Sumir a abertura */
+.splash.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Todo o site invisível no início */
+#site {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+#site.show {
+    opacity: 1;
+}
+
+/* Animação do brilho */
+@keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* Logo surgindo */
+@keyframes fadeLogo {
+    0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 🌸 Partículas mágicas */
+.splash::before, .splash::after {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle, rgba(255,255,255,.8) 2px, transparent 2px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    animation: floatParticles 10s linear infinite;
+}
+
+.splash::after {
+    animation-duration: 10s;
+    opacity: 0.15;
+}
+
+@keyframes floatParticles {
+    from { transform: translateY(0); }
+    to { transform: translateY(-30%); }
+}
