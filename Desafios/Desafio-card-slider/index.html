@@ -5,35 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>carrossel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="src/css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
 
-    <!-- Slider main container -->
-<div class="swiper">
-  <!-- Additional required wrapper -->
-  <div class="swiper-wrapper">
-    <!-- Slides -->
-    <div class="swiper-slide"><a href="#"><img src="personagens/tanjiro.jpg" alt=""></a></div>
-    <div class="swiper-slide"><a href="#"><img src="personagens/nezuko.jpg" alt=""></a></div>
-    <div class="swiper-slide"><a href="#"><img src="personagens/rengoku.jpg" alt=""></a></div>
-    ...
+<div class="cards">
+  <div class="cards-container">
+
+    <!-- CARD 1 -->
+    <div class="card-item card-item1 card" data-index="1">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="personagens/tanjiro.jpg" alt="">
+        </div>
+        <div class="card-back">
+          <a href="#" target="_blank">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card-item card-item2 card" data-index="2">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="personagens/inosuke.jpg" alt="">
+        </div>
+        <div class="card-back">
+          <a href="#" target="_blank">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card-item card-item3 card" data-index="3">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="personagens/muichiro.jpg" alt="">
+        </div>
+        <div class="card-back">
+          <a href="#" target="_blank">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card-item card-item4 card" data-index="4">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="personagens/nezuko.jpg" alt="">
+        </div>
+        <div class="card-back">
+          <a href="#" target="_blank">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card-item card-item5 card" data-index="5">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="personagens/rengoku.jpg" alt="">
+        </div>
+        <div class="card-back">
+          <a href="#" target="_blank">Ver mais</a>
+        </div>
+      </div>
+    </div>
+
   </div>
-  <!-- If we need pagination -->
-  
 
-  <!-- If we need navigation buttons -->
-  
-
-  <!-- If we need scrollbar -->
-  
+  <div class="cards-controls"></div>
 </div>
-    
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script src="script.js"></script>
-
 </body>
 </html>

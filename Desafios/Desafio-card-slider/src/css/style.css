@@ -1,33 +1,224 @@
-html,
-    body {
-      position: relative;
-      height: 100%;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-image: linear-gradient(to top, rgb(224, 70, 96), rgb(240, 136, 153), pink);
+}
 
-    body {
-      background-color: rgb(72, 72, 72);
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      margin: 0;
-      padding: 0;
-    }
+/* Container geral */
+.cards {
+  width: 100%;
+}
 
-    .swiper {
-      width: 100%;
-      height: 50vh;
-    }
+/* Container dos cards */
+.cards-container {
+  align-items: center;
+  display: flex;
+  height: 89vh;
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative;
+}
 
-    .swiper-slide {
-      background-position: center;
-      background-size: contain;
-      width: 600px;
-      height: 700px;
-    }
+/* Card base */
+.card-item{
+  height: 499px;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 307px;
+  z-index: 0;
+  border-radius: 15px;
+  background-size: contain;
+}
 
-    .swiper-slide img {
-      display: block;
-      width: 15vw;
-      height: 40vh;
-    }
+/* Posições do carrossel */
+.card-item1{
+  left: 15%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
 
-   
+.card-item2, .card-item4{
+  height: 557px;
+  opacity: 0.8;
+  width: 347px;
+  z-index: 1;
+}
+
+.card-item2 {
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.card-item3{
+  box-shadow: -2px 5px 33px 6px rgba(206, 206, 206, 0.482);
+  height: 80%;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  z-index: 2;
+}
+
+.card-item4{
+  left: 70%;
+  transform: translateX(-50%);
+}
+
+.card-item5{
+  left: 85%;
+  opacity: .4;
+  transform: translateX(-50%);
+}
+
+/* Botões */
+.cards-controls{
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px;
+  height: 100px;
+}
+
+.cards-controls button{
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 30px;
+  margin: 0px 50px;
+  padding: 0px 12px;
+  text-transform: capitalize;
+}
+
+.cards-controls-button:focus{
+  outline: none;
+}
+
+.cards-controls-previus {
+  position: relative;
+}
+
+.cards-controls-previus::before {
+  border: solid rgb(255, 255, 255);
+  border-width: 0 5px 5px 0;
+  content: '';
+  display: inline-block;
+  height: 5px;
+  left: -30px;
+  padding: 10px;
+  position: absolute;
+  top: 25%;
+  transform: rotate(135deg) translateY(-50%);
+  transition: left 0.15s ease-in-out;
+  width: 5px;
+}
+
+.cards-controls-previus:hover::before{
+  left: -40px;
+}
+
+.cards-controls-next {
+  position: relative;
+}
+
+.cards-controls-next::before {
+  border: solid black;
+  border-width: 0 5px 5px 0;
+  content: '';
+  display: inline-block;
+  height: 5px;
+  padding: 10px;
+  position: absolute;
+  right: -30px;
+  top: 45px;
+  transform: rotate(-45deg) translateY(-50%);
+  width: 5px;
+}
+
+.cards-controls-next::before {
+  right: -40px;
+}
+
+/* Navegação */
+.gallery-nav {
+  bottom: -15px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.gallery nav li{
+  background: rgb(220, 220, 220);
+  border-radius: 50%;
+  height: 10px;
+  margin: 0 16px;
+  width: 10px;
+}
+
+.cards-nav li.card-item-selected {
+  background: #555;
+}
+
+/* ----------------------------------------- */
+/*               FLIP CARD                  */
+/* ----------------------------------------- */
+
+.card {
+  perspective: 1200px; /* Profundidade 3D */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+/* AÇÃO DO FLIP */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente e verso */
+.card-front,
+.card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Parte da frente */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Parte de trás */
+.card-back {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+/* Link do verso */
+.card-back a {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 10px black;
+}
+    
