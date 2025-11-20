@@ -221,6 +221,51 @@ animate();
             playPageSound();
         });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const book = document.querySelector(".book");
+    const coverBox = document.getElementById("checkbox-cover");
+
+    function calcularZoomInteligente() {
+
+        const bookWidth = 479;
+        const bookHeight = 600;
+
+        const windowW = window.innerWidth;
+        const windowH = window.innerHeight;
+
+        // calcula o maior zoom possível sem cortar
+        let scale = Math.min(
+            (windowW * 0.7) / bookWidth,   // usa 70% da largura
+            (windowH * 0.85) / bookHeight  // usa 85% da altura
+        );
+
+        if (scale < 1) scale = 1; // nunca menor que o tamanho real
+        if (scale > 1.8) scale = 1.8; // limite para não exagerar
+
+        // deslocamento inteligente para direita:
+        // proporcional ao tamanho da tela + escala
+        let offset = (windowW - (bookWidth * scale)) / 2;
+        offset = offset * 0.55; // empurra um pouco pra direita para as duas páginas ficarem centradas
+
+        if (coverBox.checked) {
+            book.style.transform =
+                `translateX(${offset}px) scale(${scale})`;
+        }
+    }
+
+    coverBox.addEventListener("change", () => {
+        if (coverBox.checked) {
+            calcularZoomInteligente();
+        } else {
+            book.style.transform = "scale(1) translateX(0)";
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (coverBox.checked) calcularZoomInteligente();
+    });
+});
 </script>
 </body>
 </html>

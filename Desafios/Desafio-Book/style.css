@@ -333,12 +333,6 @@ input {
     z-index: 1;
 }
 
-#checkbox-cover:checked ~ .book{
-    transform: translateX(355px) scale(1.4);
-    transition-duration: .8s;
-    transition: transform 1.2s cubic-bezier(0.4,0.0,0.2,1);
-}
-
 #checkbox-cover:checked ~ .book .cover {
     transition: transform 1.5s;
     transform: rotateY(-180deg);
