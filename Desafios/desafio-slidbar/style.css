@@ -2,6 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
 }
 
 .slider {
@@ -19,6 +20,7 @@ body {
     height: 100%;
     display: flex;
     width: max-content;
+    transition: 1s;
 }
 
 .list img {
@@ -28,10 +30,20 @@ body {
     object-fit: cover;
 }
 
+/* ----- OPACIDADE DOS SLIDES ----- */
+.list .item {
+    transition: opacity 0.8s ease;
+    opacity: 0; /* padrão (laterais) */
+}
+
+.list .item.active {
+    opacity: 1; /* o slide do meio */
+}
+
 .buttons {
     position: absolute;
     top: 45%;
-    left: 3%;
+    left: 5%;
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -41,14 +53,38 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(255, 0, 119, 0.514);
-    color: rgb(255, 250, 252);
-    
-    border: none;
+    background-color: rgba(238, 238, 238, 0.849);
+    color: rgb(250, 35, 100);
+    border: 2px solid rgb(250, 35, 100);
     font-style: normal;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.247);
+    box-shadow: 1px 2px 5px rgb(248, 169, 182);
 }
+
 .dots {
     position: absolute;
     bottom: 10px;
+    color: rgb(245, 55, 87);
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+
+.dots li {
+    list-style-type: none;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border: 2px solid rgb(250, 35, 100);
+    box-shadow: 1px 2px 5px rgb(248, 169, 182);
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.dots li.active {
+    width: 40px;
 }
